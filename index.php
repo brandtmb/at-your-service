@@ -1,16 +1,17 @@
 <html>
 <head>
-<title>Bond Web Service Demo</title>
+<title>Expensive Paintings</title>
 <style>
 	body {font-family:georgia;}
   
-   .film{ 
-    border:1px solid #E77DC2; 
-    border-radius: 5px; 
-    padding: 5px; 
-    margin-bottom:5px; 
-    position:relative;    
-  } 
+.film {
+ border: 1px solid #E77DC2;
+ border-radius: 5px;
+ padding: 5px;
+ margin-bottom: 5px;
+ position: relative;
+ min-height: 150px;
+}
 
   
   .pic{ 
@@ -28,20 +29,15 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
  
 <script type="text/javascript">
-
+//Title,Artist,Cost,Year,Note,Image 
   function bondTemplate(film){
     return `
     	<div class = "film"> 
-        <b>Film</b>: ${film.Film}<br>  
-        <b> Title</b>: ${film.Title}<br>   
+        <b> Title</b>: ${film.Title}<br>  
+        <b> Artist</b>: ${film.Artist}<br>   
+        <b> Cost</b>: ${film.Cost}<br>
         <b> Year</b>: ${film.Year}<br>   
-        <b> Director</b>: ${film.Director}<br>   
-        <b> Producers</b>: ${film.Producers}<br>  
-        <b> Writers</b>: ${film.Writers}<br>   
-        <b> Composer</b>: ${film.Composer}<br>   
-        <b> Bond</b>: ${film.Bond}<br>  
-        <b> Budget</b>: ${film.Budget}<br>   
-        <b> Box Office</b>: ${film.BoxOffice}<br>  
+        <b> Note</b>: ${film.Note}<br>   
         <div class="pic"><img src="thumbnails/${film.Image}" ></div> 
       </div> 
     `;
@@ -91,8 +87,8 @@ alert('Error - ' + xhr.status + ': ' + xhr.statusText);
 </script>
 </head>
 	<body>
-	<h1>Bond Web Service</h1>
-		<a href="year" class="category">Bond Films By Year</a><br />
+	<h1>Expensive Paintings</h1>
+		<a href="year" class="category">Most Expansive Painting Sold by Year By Year</a><br />
 		<a href="box" class="category">Bond Films By International Box Office Totals</a>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
